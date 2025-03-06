@@ -890,6 +890,10 @@ body {
   right: 66.666667%;
 }
 
+.left-\[calc\(50\%\)\] {
+  left: calc(50%);
+}
+
 .z-0 {
   z-index: 0;
 }
@@ -1184,6 +1188,11 @@ body {
   height: 5rem;
 }
 
+.h-fit {
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
 .max-h-\[300px\] {
   max-height: 300px;
 }
@@ -1355,6 +1364,10 @@ body {
 
 .w-1\/2 {
   width: 50%;
+}
+
+.w-2\/3 {
+  width: 66.666667%;
 }
 
 .min-w-0 {
@@ -2541,6 +2554,11 @@ body {
   --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-medica {
+  --tw-shadow-color: #506E9C;
+  --tw-shadow: var(--tw-shadow-colored);
 }
 
 .outline-none {
@@ -3893,6 +3911,10 @@ body {
     width: 83.333333%;
   }
 
+  .md\:w-1\/2 {
+    width: 50%;
+  }
+
   .md\:max-w-3xl {
     max-width: 48rem;
   }
@@ -3937,6 +3959,11 @@ body {
   .md\:px-10 {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
+  }
+
+  .md\:px-0 {
+    padding-left: 0px;
+    padding-right: 0px;
   }
 
   .md\:text-sm {
@@ -4083,6 +4110,10 @@ body {
 
   .xl\:w-full {
     width: 100%;
+  }
+
+  .xl\:w-4\/12 {
+    width: 33.333333%;
   }
 
   .xl\:grid-cols-4 {

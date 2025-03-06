@@ -27,10 +27,10 @@ export const Conocenos = () => {
       </header>
       <main className='w-11/12 md:w-10/12 lg:w-8/12 mx-auto py-10'>
 
-        <article className='grid grid-cols-1 gap-5 md:grid-cols-12 mb-10 text-sm text-justify' id='raul'>
+        <article className='grid grid-cols-1 gap-5 md:grid-cols-12 mb-10 text-sm text-justify bg-gray-100 p-10 rounded-md' id='raul'>
           <div className='col-span-1 md:col-span-8 flex flex-col gap-3'>
             <div>
-              <h2 className='text-2xl md:text-3xl text-medica'>Dr. Raúl Durán López
+              <h2 className='text-2xl md:text-3xl text-medica rounded-sm'>Dr. Raúl Durán López
               </h2>
               <p className='text-justify'>
                 Otorrinolaringología, laringología, alergia, rinología y cirugía plástica facial.
@@ -74,12 +74,12 @@ export const Conocenos = () => {
 
           </div>
           <div className='col-span-1 md:col-span-4 flex justify-center items-center'>
-            <img src={raul} alt="" />
+            <img src={raul} alt="" className='shadow-xl shadow-medica' />
           </div>
         </article>
 
 
-        <article className='grid grid-cols-1 gap-5 md:grid-cols-12 mb-10 text-sm text-justify' id='magdicarla'>
+        <article className='grid grid-cols-1 gap-5 md:grid-cols-12 mb-10 text-sm text-justify bg-gray-100 p-10 rounded-md' id='magdicarla'>
           <div className='col-span-1 md:col-span-8 flex flex-col gap-3'>
             <div>
               <h2 className='text-2xl md:text-3xl text-medica'>Dra. Magdicarla De Alba
@@ -128,7 +128,7 @@ export const Conocenos = () => {
 
           </div>
           <div className='col-span-1 md:col-span-4 flex justify-center items-center'>
-            <img src={magdicarla} alt="" />
+            <img src={magdicarla} alt="" className='shadow-xl shadow-medica rounded-sm' />
           </div>
         </article>
 
