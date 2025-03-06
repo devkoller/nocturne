@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Layout } from '@/components/auth'
 import { DataTable } from '@/components/utils'
-import { getColumns, FormUser, Grants, FormPermissions } from '@/components/Users'
+import { getColumns, FormUser, FormPermissions } from '@/components/Users'
 import { UserType } from '@/types'
 import { useFetch, usePost } from '@/hooks'
 import {
@@ -162,9 +162,8 @@ export const Users = () => {
           {Data.SheetType === 1 && (
             <FormUser selectedUser={Data.selectedUser} update={update} closeSheet={handleSheet} />
           )}
-          {Data.SheetType === 2 && (
-            <Grants selectedUser={Data.selectedUser} update={update} closeSheet={handleSheet} />
-          )}
+          {/* {Data.SheetType === 2 && (
+          )} */}
           {Data.SheetType === 3 && (
             <FormPermissions closeSheet={handleSheet} />
           )}
