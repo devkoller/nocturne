@@ -10,7 +10,7 @@ export const Menu = () => {
   const { isAuthenticated } = useAuthStore()
   return (
     <header className='py-3 w-screen'>
-      <nav className='flex items-center flex-wrap gap-3 justify-between px-5 text-gray-400'>
+      <nav className='flex items-center flex-wrap gap-3 justify-between px-10 text-gray-400'>
         <div className='flex gap-2'>
           {isAuthenticated === 'Checking' && <Spinner />}
           {isAuthenticated !== 'Checking' && (

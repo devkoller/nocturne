@@ -58,7 +58,7 @@ export const Login = () => {
                 <FormInput
                   label="Contraseña"
                   name="password"
-                  password
+                  type='password'
                   control={form.control}
                 // description="La contraseña debe tener al menos 4 caracteres"
                 />
