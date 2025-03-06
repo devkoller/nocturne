@@ -1,23 +1,33 @@
 // Views
 import { Login } from "@/views/Login"
 import { RecoveryPassword } from "@/views/RecoveryPassword"
+
 import { Home } from "@/views/Home"
-import { Reports } from "@/views/Reports"
-import { Contratos } from "@/views/Contratos"
-import { Almacenes } from "@/views/Almacenes"
-import { CatalagoVenta } from "@/views/CatalagoVenta"
-import { Proveedores } from "@/views/Proveedores"
 import { Users } from "@/views/Users"
-import { Clientes } from "@/views/Clientes"
+import { AdminServices } from "@/views/AdminServices"
+import { AdminMedicalOffice } from "@/views/AdminMedicalOffice"
+import { AdminPatients } from "@/views/AdminPatients"
+import { PatientById } from "@/views/PatientById"
+
 import { UserProfile } from "@/views/UserProfile"
-import { ContratoID } from "@/views/ContratoID"
+import { Servicios } from "@/views/Servicios"
+import { Instalaciones } from "@/views/Instalaciones"
+import { Conocenos } from "@/views/Conocenos"
 
 //ICONS
-import { CiViewTable } from "react-icons/ci"
-import { FaHome, FaUsers, FaWarehouse } from "react-icons/fa"
-import { IoNewspaperOutline, IoMedical } from "react-icons/io5"
-import { GiPelvisBone } from "react-icons/gi"
-import { BsHospitalFill } from "react-icons/bs"
+// import { CiViewTable } from "react-icons/ci"
+import {
+	FaHome,
+	FaUsers,
+	FaHandHoldingMedical,
+	// FaWarehouse
+	FaUserInjured,
+} from "react-icons/fa"
+import { LuHospital } from "react-icons/lu"
+
+// import { IoNewspaperOutline, IoMedical } from "react-icons/io5"
+// import { GiPelvisBone } from "react-icons/gi"
+// import { BsHospitalFill } from "react-icons/bs"
 
 export const routes = [
 	{
@@ -33,6 +43,24 @@ export const routes = [
 		menu: false,
 	},
 	{
+		route: "/servicios",
+		component: Servicios,
+		state: "Not Granted",
+		menu: false,
+	},
+	{
+		route: "/instalaciones",
+		component: Instalaciones,
+		state: "Not Granted",
+		menu: false,
+	},
+	{
+		route: "/conocenos",
+		component: Conocenos,
+		state: "Not Granted",
+		menu: false,
+	},
+	{
 		route: "/home",
 		component: Home,
 		title: "Inicio",
@@ -43,142 +71,44 @@ export const routes = [
 		icon: FaHome,
 	},
 	{
-		route: "/reportes",
-		component: Reports,
-		title: "Reportes",
+		route: "/admin-pacientes",
+		component: AdminPatients,
+		title: "Pacientes",
 		state: "Authenticated",
 		breadcrumb: "Inicio",
 		grants: null,
 		menu: true,
-		icon: CiViewTable,
-	},
-	// {
-	// 	route: "/consulta",
-	// 	title: "Consulta",
-	// 	state: "Authenticated",
-	// 	breadcrumb: "Consulta",
-	// 	menu: true,
-	// 	icon: CiViewTable,
-	// 	submenus: [
-	// 		{
-	// 			route: "reports",
-	// 			title: "Reportes",
-	// 			component: Reports,
-	// 			breadcrumb: "Reportes",
-	// 			state: "Authenticated",
-	// 			menu: true,
-	// 		},
-	// 		{
-	// 			route: "inventory",
-	// 			title: "Inventario",
-	// 			component: Inventory,
-	// 			breadcrumb: "Inventario",
-	// 			state: "Authenticated",
-	// 			menu: true,
-	// 		},
-	// 		{
-	// 			route: "movement",
-	// 			title: "Movimientos",
-	// 			component: Movements,
-	// 			breadcrumb: "Movimientos",
-	// 			state: "Authenticated",
-	// 			menu: true,
-	// 		},
-	// 	],
-	// },
-	{
-		route: "/contratos",
-		component: Contratos,
-		title: "Contratos",
-		state: "Authenticated",
-		breadcrumb: "Contratos",
-		grants: null,
-		menu: true,
-		icon: IoNewspaperOutline,
+		icon: FaUserInjured,
 	},
 	{
-		route: "/contratos/:id",
-		component: ContratoID,
-		title: "Contratos",
+		route: "/admin-pacientes/:id",
+		component: PatientById,
+		title: "Pacientes",
 		state: "Authenticated",
-		breadcrumb: "Contratos",
+		breadcrumb: "Inicio",
 		grants: null,
 		menu: false,
-		icon: IoNewspaperOutline,
-	},
-	// {
-	// 	route: "/insumos",
-	// 	title: "Insumos",
-	// 	state: "Authenticated",
-	// 	breadcrumb: "Consulta",
-	// 	menu: true,
-	// 	icon: FaBriefcaseMedical,
-	// 	submenus: [
-	// 		{
-	// 			route: "movement",
-	// 			title: "Movimientos",
-	// 			component: CapturarMovimientos,
-	// 			breadcrumb: "Movimientos",
-	// 			state: "Authenticated",
-	// 			menu: true,
-	// 		},
-	// 		{
-	// 			route: "solicitud",
-	// 			title: "Solicitud de Insumos",
-	// 			component: SolicitudInsumos,
-	// 			breadcrumb: "Solicitud de Insumos",
-	// 			state: "Authenticated",
-	// 			menu: true,
-	// 		},
-	// 		{
-	// 			route: "recepcion",
-	// 			title: "Recepción de Insumos",
-	// 			component: RecepcionInsumos,
-	// 			breadcrumb: "Recepción de Insumos",
-	// 			state: "Authenticated",
-	// 			menu: true,
-	// 		},
-	// 	],
-	// },
-	{
-		route: "/catalago-venta",
-		component: CatalagoVenta,
-		title: "Catalogo de Venta",
-		state: "Authenticated",
-		breadcrumb: "Catalogo de Venta",
-		grants: null,
-		menu: true,
-		icon: IoMedical,
+		icon: FaUserInjured,
 	},
 	{
-		route: "/almacenes",
-		component: Almacenes,
-		title: "Almacenes",
+		route: "/admin-services",
+		component: AdminServices,
+		title: "Servicios",
 		state: "Authenticated",
-		breadcrumb: "Almacenes",
+		breadcrumb: "Inicio",
 		grants: null,
 		menu: true,
-		icon: FaWarehouse,
+		icon: FaHandHoldingMedical,
 	},
 	{
-		route: "/proveedores",
-		component: Proveedores,
-		title: "Proveedores",
+		route: "/admin-consultorios",
+		component: AdminMedicalOffice,
+		title: "Consultorios",
 		state: "Authenticated",
-		breadcrumb: "Proveedores",
+		breadcrumb: "Inicio",
 		grants: null,
 		menu: true,
-		icon: GiPelvisBone,
-	},
-	{
-		route: "/clientes",
-		component: Clientes,
-		title: "Clientes",
-		state: "Authenticated",
-		breadcrumb: "Clientes",
-		grants: null,
-		menu: true,
-		icon: BsHospitalFill,
+		icon: LuHospital,
 	},
 	{
 		route: "/usuarios",

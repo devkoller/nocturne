@@ -9,7 +9,7 @@ export const Router = () => {
 
   const printRoutes = () => {
     return elements.map((route) => {
-      if (route.state === isAuthenticated) {
+      if (route.state === 'Not Granted') {
         return (
           <Route
             key={route.route}
@@ -17,11 +17,41 @@ export const Router = () => {
             element={<route.component />}
           />
         )
-      } else {
-        if (route.state === "Authenticated") {
-          return <Route key={route.route} path={route.route} element={<Navigate to="/login" />} />
+      } else if (route.state === "Authenticated") {
+        if (isAuthenticated === "Authenticated") {
+          return (
+            <Route
+              key={route.route}
+              path={route.route}
+              element={<route.component />}
+            />
+          )
         } else {
-          return <Route key={route.route} path={route.route} element={<Navigate to="/home" />} />
+          return (
+            <Route
+              key={route.route}
+              path={route.route}
+              element={<Navigate to="/login" />}
+            />
+          )
+        }
+      } else if (route.state === "Not Authenticated") {
+        if (isAuthenticated === "Not Authenticated") {
+          return (
+            <Route
+              key={route.route}
+              path={route.route}
+              element={<route.component />}
+            />
+          )
+        } else {
+          return (
+            <Route
+              key={route.route}
+              path={route.route}
+              element={<Navigate to="/home" />}
+            />
+          )
         }
       }
     })

@@ -4,24 +4,29 @@ import { useForm } from "react-hook-form"
 import { Button } from "@/components/ui/button"
 import { Form } from "@/components/ui/form"
 import { FormInput } from '@/components/Form'
-import { UserType } from "./Columns"
+import { UserType } from "@/types"
 import { usePost } from "@/hooks"
 import { useToast } from "@/hooks/use-toast"
 
 
 
 const formSchema = z.object({
-  username: z.string().min(2, {
+  name: z.string().min(2, {
     message: "El usuario debe tener al menos 2 caracteres",
   }).max(50, {
     message: "El usuario debe tener menos de 50 caracteres",
   }),
-  nombre: z.string(),
-  ape1: z.string(),
-  ape2: z.string().nullable(),
-  correo: z.string().email({
+  lastname1: z.string(),
+  lastname2: z.string(),
+  email: z.string().email({
     message: "Correo no válido",
   }),
+  phone: z.string().min(9, {
+    message: "El teléfono debe tener al menos 10 caracteres",
+  }).max(15, {
+    message: "El teléfono debe tener menos de 15 caracteres",
+  }),
+  password: z.string().optional().nullable(),
 })
 
 type FormUserProps = {
@@ -36,17 +41,18 @@ export const FormUser = ({ selectedUser, update, closeSheet }: FormUserProps) =>
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      username: selectedUser?.username || "",
-      nombre: selectedUser?.persona?.nombre || "",
-      ape1: selectedUser?.persona?.ape1 || "",
-      ape2: selectedUser?.persona?.ape2 || "",
-      correo: selectedUser?.correo || "",
+      name: selectedUser?.name || "",
+      lastname1: selectedUser?.lastname1 || "",
+      lastname2: selectedUser?.lastname2 || "",
+      email: selectedUser?.email || "",
+      phone: selectedUser?.phone || "",
+      password: undefined,
     },
   })
 
   function onSubmit(values: z.infer<typeof formSchema>) {
 
-    let url = selectedUser ? `/user/update-user` : "/user/new-user"
+    let url = selectedUser ? `/user/update-user` : "/user/create"
     let method = selectedUser ? "patch" : "post"
 
     execute({
@@ -73,36 +79,44 @@ export const FormUser = ({ selectedUser, update, closeSheet }: FormUserProps) =>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           <FormInput
-            label="Usuario"
-            name="username"
-            control={form.control}
-            required
-          />
-          <FormInput
             label="Nombre"
-            name="nombre"
+            name="name"
             control={form.control}
             required
           />
           <FormInput
             label="Primer apellido"
-            name="ape1"
+            name="lastname1"
             control={form.control}
             required
           />
           <FormInput
             label="Segundo apellido"
-            name="ape2"
+            name="lastname2"
             control={form.control}
           />
           <FormInput
             label="Correo"
-            name="correo"
+            name="email"
             control={form.control}
             required
           />
-          <div className="flex justify-end">
+          <FormInput
+            label="Teléfono"
+            name="phone"
+            control={form.control}
+            required
+          />
+          {!selectedUser && (
+            <FormInput
+              label="Contraseña"
+              name="password"
+              control={form.control}
+              required
+            />
+          )}
 
+          <div className="flex justify-end">
             <Button type="submit" disabled={loading}>
               Guardar
             </Button>

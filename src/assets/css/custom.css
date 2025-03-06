@@ -10,3 +10,28 @@
 		transform: scale(1.5);
 	}
 }
+
+.pos-custom-1 {
+	position: absolute;
+	z-index: 1;
+	right: calc(50% - 15%);
+}
+
+.pos-custom-2 {
+	position: absolute;
+	left: calc(50% - 15%);
+	z-index: 1;
+}
+
+@media (min-width: 768px) {
+	.pos-custom-1 {
+		right: calc(50% - 5%);
+	}
+	.pos-custom-2 {
+		left: calc(50% - 5%);
+	}
+}
+
+html {
+	scroll-behavior: smooth;
+}

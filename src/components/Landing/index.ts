@@ -8,6 +8,7 @@ import { Numbers } from "./Numbers"
 import { Sponsors } from "./Sponsors"
 import { Maps } from "./Maps"
 import { Footer } from "./Footer"
+import { MembersOf } from "./MembersOf"
 
 export {
 	Contact,
@@ -20,4 +21,5 @@ export {
 	Sponsors,
 	Maps,
 	Footer,
+	MembersOf,
 }

@@ -37,7 +37,7 @@ export const FormDatePicker = ({ control, name, label, required, description }: 
       control={control}
       name={name}
       render={({ field }) => (
-        <FormItem className="flex flex-col">
+        <FormItem className="flex flex-col" >
           {label && (
             <FormLabel>{label}
               {required && <sup className="text-red-500">*</sup>}
@@ -49,7 +49,7 @@ export const FormDatePicker = ({ control, name, label, required, description }: 
                 <Button
                   variant={"outline"}
                   className={cn(
-                    "w-[240px] pl-3 text-left font-normal",
+                    "w-full pl-3 text-left font-normal",
                     !field.value && "text-muted-foreground"
                   )}
                 >

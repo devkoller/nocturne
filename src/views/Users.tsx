@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import { Layout } from '@/components/auth'
 import { DataTable } from '@/components/utils'
-import { getColumns, UserType, FormUser, Grants } from '@/components/Users'
+import { getColumns, FormUser, Grants, FormPermissions } from '@/components/Users'
+import { UserType } from '@/types'
 import { useFetch, usePost } from '@/hooks'
 import {
   Sheet,
@@ -64,6 +65,15 @@ export const Users = () => {
       SheetType: 1
     }))
   }
+  const handleNewPermission = () => {
+    setOpen(prev => !prev)
+    setData(prev => ({
+      ...prev,
+      selectedUser: null,
+      SheetTitle: 'Nuevo permiso',
+      SheetType: 3
+    }))
+  }
 
   const handleGrants = (user: UserType) => {
     setOpen(prev => !prev)
@@ -87,10 +97,10 @@ export const Users = () => {
       method: "get",
     }).then((res) => {
       if (res.status === 200) {
-        let data = res.data.map((user: { persona: { nombre: string; ape1: string; ape2?: string } }) => {
+        let data = res.data.map((user: UserType) => {
           return {
             ...user,
-            nombre: `${user?.persona?.nombre} ${user?.persona?.ape1}`,
+            nombre: `${user.name} ${user.lastname1}`,
           }
         })
         setData(e => ({ ...e, users: data, }))
@@ -102,10 +112,10 @@ export const Users = () => {
 
   useEffect(() => {
     if (usersData) {
-      let data = usersData.data.map((user: { persona: { nombre: string; ape1: string; ape2?: string } }) => {
+      let data = usersData.data.map((user: UserType) => {
         return {
           ...user,
-          nombre: `${user?.persona?.nombre} ${user?.persona?.ape1}`,
+          nombre: `${user.name} ${user.lastname1}`,
         }
       })
       setData(e => ({ ...e, users: data, }))
@@ -122,6 +132,9 @@ export const Users = () => {
         <PageActions>
           <Button size="sm" onClick={handleNewUser}>
             Nuevo usuario
+          </Button>
+          <Button size="sm" onClick={handleNewPermission}>
+            Nuevo permiso
           </Button>
         </PageActions>
       </PageHeader>
@@ -147,11 +160,13 @@ export const Users = () => {
             </SheetDescription>
           </SheetHeader>
           {Data.SheetType === 1 && (
-
             <FormUser selectedUser={Data.selectedUser} update={update} closeSheet={handleSheet} />
           )}
           {Data.SheetType === 2 && (
             <Grants selectedUser={Data.selectedUser} update={update} closeSheet={handleSheet} />
+          )}
+          {Data.SheetType === 3 && (
+            <FormPermissions closeSheet={handleSheet} />
           )}
         </SheetContent>
       </Sheet>

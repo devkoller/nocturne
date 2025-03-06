@@ -36,7 +36,7 @@ export const Grants = ({ selectedUser, update, closeSheet }: GrantsProps) => {
   })
 
   const { response: permisosData, loading: gransLoading } = useFetch({
-    url: '/data/list-grants'
+    url: '/user/get-permissions'
   })
 
   const onSubmit = () => {
@@ -155,22 +155,24 @@ export const Grants = ({ selectedUser, update, closeSheet }: GrantsProps) => {
 
   useEffect(() => {
     if (userData) {
-      const grants = JSON.parse(userData.data.grants)
-      SetData(prev => ({
-        ...prev,
-        userData: userData,
-        userGrants: grants.Statement[0].Action,
-        userBlocked: grants.Statement[1].Action
-      }))
+      console.log("🚀 > Grants.tsx:158 > useEffect > userData:", userData);
+      // const grants = JSON.parse(userData.data.grants)
+      // SetData(prev => ({
+      //   ...prev,
+      //   userData: userData,
+      //   userGrants: grants.Statement[0].Action,
+      //   userBlocked: grants.Statement[1].Action
+      // }))
     }
   }, [userData])
 
   useEffect(() => {
     if (permisosData) {
-      SetData(prev => ({
-        ...prev,
-        grants: permisosData.data
-      }))
+      console.log("🚀 > Grants.tsx:171 > useEffect > permisosData:", permisosData);
+      // SetData(prev => ({
+      //   ...prev,
+      //   grants: permisosData.data
+      // }))
     }
   }, [permisosData])
 
@@ -181,12 +183,12 @@ export const Grants = ({ selectedUser, update, closeSheet }: GrantsProps) => {
 
   return (
     <div>
-      <div>
+      <div className='mb-3'>
         <Button onClick={onSubmit} className='w-full' disabled={loading}>
           Guardar
         </Button>
       </div>
-      {printHeads([...Data.userGrants, ...Data.userBlocked])}
+      {/* {printHeads([...Data.userGrants, ...Data.userBlocked])} */}
       <div>
         <Button onClick={onSubmit} className='w-full' disabled={loading}>
           Guardar

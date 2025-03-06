@@ -1,5 +1,5 @@
-import { useLocalStorage } from "./useLocalStorage"
-import { useSessionStorage } from "./useSessionStorage"
+import { useLocalStorage } from "./useLocalStorage.tsx"
+import { useSessionStorage } from "./useSessionStorage.tsx"
 import {
   clearErrorMessage,
   onCheckingCredentials,
@@ -13,7 +13,7 @@ import { loginService, updatePermissions } from "@/service/authService.ts"
 
 
 type startLogin = {
-  username: string
+  email: string
   password: string
   keepSessionOpen: boolean
 }
@@ -33,10 +33,10 @@ export const useAuthStore = () => {
 
   const {
     id,
-    username,
     name,
-    correo,
-    telefono,
+    lastname1,
+    lastname2,
+    email,
     permisos,
     keepSessionOpen,
     token,
@@ -63,10 +63,10 @@ export const useAuthStore = () => {
 
       const session = {
         id: data.id,
-        username: data.username,
         name: data.name,
-        correo: data.correo,
-        telefono: data.telefono,
+        lastname1: data.lastname1,
+        lastname2: data.lastname2,
+        email: data.email,
         keepSessionOpen: data.keepSessionOpen,
         token: data.token,
         permisos: data.permisos,
@@ -141,10 +141,10 @@ export const useAuthStore = () => {
 
   return {
     id,
-    username,
     name,
-    correo,
-    telefono,
+    lastname1,
+    lastname2,
+    email,
     token,
     keepSessionOpen,
     permisos,

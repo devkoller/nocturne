@@ -4,7 +4,7 @@ import { CiCalendar } from 'react-icons/ci'
 import { GiMexico } from 'react-icons/gi'
 import { GiCrossedBones } from 'react-icons/gi'
 import { FaUsers } from 'react-icons/fa'
-import productos from '@/assets/images/meditiva/productos.png'
+// import productos from '@/assets/images/meditiva/productos.png'
 
 const data = [
   {
@@ -17,12 +17,12 @@ const data = [
     number: 12,
     text: 'Estados de la república'
   },
-  {
-    icon: <GiCrossedBones />,
-    number: 2000,
-    text: 'Productos en catálogo',
-    img: productos
-  },
+  // {
+  //   icon: <GiCrossedBones />,
+  //   number: 2000,
+  //   text: 'Productos en catálogo',
+  //   img: productos
+  // },
   {
     icon: <FaUsers />,
     number: 4000,

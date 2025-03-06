@@ -1,4 +1,5 @@
 import { ThemeProvider } from "@/context/theme-provider"
+import { MoProvider } from "@/context/consultorio-provider"
 import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 
@@ -11,12 +12,14 @@ function App() {
 
   return (
     <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
-      <Provider store={store}>
-        <BrowserRouter>
-          <Router />
-        </BrowserRouter>
-      </Provider>
-      <Toaster />
+      <MoProvider storageKey="vite-mo-selected">
+        <Provider store={store}>
+          <BrowserRouter>
+            <Router />
+          </BrowserRouter>
+        </Provider>
+        <Toaster />
+      </MoProvider>
     </ThemeProvider>
 
   )

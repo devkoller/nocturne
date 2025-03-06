@@ -13,7 +13,7 @@ import { LoginForm } from "@/components/login-form"
 
 
 const formSchema = z.object({
-  username: z.string().min(2, {
+  email: z.string().min(2, {
     message: "El usuario debe tener al menos 2 caracteres",
   }).max(50, {
     message: "El usuario debe tener menos de 50 caracteres",
@@ -32,7 +32,7 @@ export const Login = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      username: "",
+      email: "",
       password: "",
       keepSessionOpen: false,
     },
@@ -52,7 +52,7 @@ export const Login = () => {
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
                 <FormInput
                   label="Usuario"
-                  name="username"
+                  name="email"
                   control={form.control}
                 />
                 <FormInput
@@ -60,6 +60,7 @@ export const Login = () => {
                   name="password"
                   password
                   control={form.control}
+                // description="La contraseña debe tener al menos 4 caracteres"
                 />
                 <FormCheckBox
                   label="Mantener sesión abierta"
@@ -74,36 +75,6 @@ export const Login = () => {
           </LoginForm>
         </div>
       </div>
-      {/* <AuthLayer>
-        <div className="bg-white p-5 h-full">
-          <div className="mb-10">
-            <h1 className="font-bold text-4xl">Corporativo</h1>
-          </div>
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-              <FormInput
-                label="Usuario"
-                name="username"
-                control={form.control}
-              />
-              <FormInput
-                label="Contraseña"
-                name="password"
-                password
-                control={form.control}
-              />
-              <FormCheckBox
-                label="Mantener sesión abierta"
-                name="keepSessionOpen"
-                control={form.control}
-              />
-              <Button type="submit">
-                Iniciar sesión
-              </Button>
-            </form>
-          </Form>
-        </div>
-      </AuthLayer> */}
     </>
   )
 }

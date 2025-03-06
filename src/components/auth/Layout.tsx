@@ -1,16 +1,11 @@
 
 import { SidebarProvider, SidebarTrigger, SidebarInset } from "@/components/ui/sidebar"
 import { AppSidebar } from "./AppSidebar"
-// import {
-//   Breadcrumb,
-//   BreadcrumbItem,
-//   BreadcrumbLink,
-//   BreadcrumbList,
-//   BreadcrumbPage,
-//   BreadcrumbSeparator,
-// } from "@/components/ui/breadcrumb"
 import { Separator } from "@/components/ui/separator"
 import Cookies from "js-cookie";
+import { Link } from 'react-router-dom'
+import icono from '@/assets/images/otorrino/favicon.png'
+
 
 
 type LayerProps = {
@@ -22,24 +17,15 @@ export const Layout = ({ children }: LayerProps) => {
   return (
     <SidebarProvider defaultOpen={defaultOpen}>
       <AppSidebar />
-      <SidebarInset>
+      <SidebarInset className="overflow-auto">
         <header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12">
           <div className="flex items-center gap-2 px-4">
             <SidebarTrigger className="-ml-1" />
             <Separator orientation="vertical" className="mr-2 h-4" />
-            {/* <Breadcrumb>
-              <BreadcrumbList>
-                <BreadcrumbItem className="hidden md:block">
-                  <BreadcrumbLink href="#">
-                    Building Your Application
-                  </BreadcrumbLink>
-                </BreadcrumbItem>
-                <BreadcrumbSeparator className="hidden md:block" />
-                <BreadcrumbItem>
-                  <BreadcrumbPage>Data Fetching</BreadcrumbPage>
-                </BreadcrumbItem>
-              </BreadcrumbList>
-            </Breadcrumb> */}
+            <Link className='flex gap-1 items-center w-fit' to='/'>
+              <img src={icono} alt='logo' className='w-[2rem]' />
+              <p className='text-xl lg:text-2xl text-black font-bold'>Medica<span className='text-otorrino'>otorrino</span> </p>
+            </Link>
           </div>
         </header>
         <main className="p-5">

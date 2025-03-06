@@ -5,10 +5,10 @@ export const authSlice = createSlice({
 	initialState: {
 		isAuthenticated: "Checking", // checking, true, false
 		id: null,
-		username: null,
 		name: null,
-		correo: null,
-		telefono: null,
+		lastname1: null,
+		lastname2: null,
+		email: null,
 		keepSessionOpen: null,
 		permisos: null,
 		token: null,
@@ -20,10 +20,10 @@ export const authSlice = createSlice({
 		onLogin: (state, { payload }) => {
 			state.isAuthenticated = "Authenticated"
 			state.id = payload.id
-			state.username = payload.username
 			state.name = payload.name
-			state.correo = payload.correo
-			state.telefono = payload.telefono
+			state.lastname1 = payload.lastname1
+			state.lastname2 = payload.lastname2
+			state.email = payload.email
 			state.keepSessionOpen = payload.keepSessionOpen
 			state.permisos = payload.permisos
 			state.token = payload.token
@@ -35,8 +35,10 @@ export const authSlice = createSlice({
 		onLogout: (state, { payload }) => {
 			state.isAuthenticated = "Not Authenticated"
 			state.id = null
-			state.username = null
 			state.name = null
+			state.lastname1 = null
+			state.lastname2 = null
+			state.email = null
 			state.keepSessionOpen = null
 			state.permisos = null
 			state.token = null
