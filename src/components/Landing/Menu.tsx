@@ -1,8 +1,7 @@
-import { MoonStar, } from "lucide-react"
 import { useTranslation } from 'react-i18next';
 import { Toggle } from "@/components/ui/toggle"
 import { useLanguage, } from '@/context/LanguageContext';
-
+import icon from '@/assets/images/favicon.png'
 
 
 
@@ -21,8 +20,8 @@ export const Menu = () => {
   return (
     <header className="container mx-auto z-40 bg-black">
       <div className="flex h-20 items-center justify-between py-6">
-        <div className="flex gap-2 items-center">
-          <MoonStar className="h-8 w-8 text-purple-500" />
+        <div className="flex gap-3 items-center">
+          <img src={icon} alt="" className="h-10" />
           <span className="text-xl font-bold">Nocturne Labs</span>
         </div>
         <nav className="hidden gap-6 md:flex">

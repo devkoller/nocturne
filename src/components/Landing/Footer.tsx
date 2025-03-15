@@ -1,13 +1,14 @@
 
-import { MoonStar, } from "lucide-react"
 import { useTranslation } from 'react-i18next';
+import icon from '@/assets/images/favicon.png'
+
 export const Footer = () => {
   const { t } = useTranslation();
   return (
     <footer className="w-full border-t border-gray-800 bg-black py-6">
       <div className="container mx-auto flex flex-col items-center justify-between gap-4 md:flex-row md:gap-0">
         <div className="flex items-center gap-2">
-          <MoonStar className="h-6 w-6 text-purple-500" />
+          <img src={icon} alt="" className="h-10" />
           <span className="font-bold">Nocturne Labs</span>
         </div>
         {/* <div className="flex gap-4">
