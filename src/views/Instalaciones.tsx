@@ -1,4 +1,4 @@
-import { Menu, Footer, Maps } from '@/components/Landing'
+import { Menu, Footer, } from '@/components/Landing'
 import cr1 from '@/assets/images/consultorio/cr1.avif'
 import cr2 from '@/assets/images/consultorio/cr2.avif'
 import cr3 from '@/assets/images/consultorio/cr3.avif'
@@ -64,7 +64,6 @@ export const Instalaciones = () => {
         </div>
 
       </main>
-      <Maps />
       <Footer />
     </>
   )

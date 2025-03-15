@@ -4,7 +4,7 @@ import { AppSidebar } from "./AppSidebar"
 import { Separator } from "@/components/ui/separator"
 import Cookies from "js-cookie";
 import { Link } from 'react-router-dom'
-import icono from '@/assets/images/otorrino/favicon.png'
+// import icono from '@/assets/images/otorrino/favicon.png'
 
 
 
@@ -23,7 +23,7 @@ export const Layout = ({ children }: LayerProps) => {
             <SidebarTrigger className="-ml-1" />
             <Separator orientation="vertical" className="mr-2 h-4" />
             <Link className='flex gap-1 items-center w-fit' to='/'>
-              <img src={icono} alt='logo' className='w-[2rem]' />
+              {/* <img src={icono} alt='logo' className='w-[2rem]' /> */}
               <p className='text-xl lg:text-2xl text-black font-bold'>Medica<span className='text-otorrino'>otorrino</span> </p>
             </Link>
           </div>

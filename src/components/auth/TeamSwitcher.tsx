@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import icono from '@/assets/images/otorrino/favicon.png'
+// import icono from '@/assets/images/otorrino/favicon.png'
 import { ChevronsUpDown, Plus } from "lucide-react"
 import { useFetch, } from '@/hooks'
 import { useEffect, } from 'react'
@@ -79,7 +79,7 @@ export function TeamSwitcher() {
                 className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
               >
                 <div className="flex aspect-square bg-transparent size-8 items-center justify-center rounded-lg text-sidebar-primary-foreground">
-                  <img src={icono} alt="" />
+                  {/* <img src={icono} alt="" /> */}
                 </div>
                 <div className="grid flex-1 text-left text-sm leading-tight">
                   <span className="truncate font-semibold">

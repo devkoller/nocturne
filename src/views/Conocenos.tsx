@@ -1,4 +1,4 @@
-import { Menu, Footer, Maps } from '@/components/Landing'
+import { Menu, Footer, } from '@/components/Landing'
 import raul from '@/assets/images/otorrino/raul.avif'
 import magdicarla from '@/assets/images/otorrino/magdicarla.avif'
 import { useEffect } from "react";
@@ -134,7 +134,6 @@ export const Conocenos = () => {
 
 
       </main>
-      <Maps />
       <Footer />
     </>
   )

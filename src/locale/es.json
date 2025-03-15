@@ -1,0 +1,91 @@
+{
+	"translation": {
+		"features": "Características",
+		"solutions": "Soluciones",
+		"testimonials": "Testimonios",
+		"about": "Acerca de",
+		"contact": "Contacto",
+		"login": "Get Started",
+		"landing": {
+			"banner": {
+				"title": "Transformando Ideas en Realidad Digital",
+				"subtitle": "Nocturne Labs ofrece soluciones de software de vanguardia que permiten a las empresas prosperar en el panorama digital.",
+				"cta": "Comenzar",
+				"cta2": "Saber más"
+			}
+		},
+		"featuresSection": {
+			"tagline": "Características Principales",
+			"title": "Soluciones Potentes para Problemas Complejos",
+			"description": "Nuestra suite de herramientas y servicios de grado empresarial diseñados para acelerar su viaje de transformación digital.",
+			"advanced": {
+				"title": "Desarrollo Avanzado",
+				"description": "Desarrollo de software de vanguardia utilizando las últimas tecnologías y metodologías."
+			},
+			"security": {
+				"title": "Seguridad Empresarial",
+				"description": "Medidas de seguridad robustas para proteger sus datos y aplicaciones de amenazas."
+			},
+			"performance": {
+				"title": "Optimización del Rendimiento",
+				"description": "Soluciones optimizadas que maximizan la eficiencia y minimizan el uso de recursos."
+			}
+		},
+		"solutionsSection": {
+			"tagline": "Nuestras Soluciones",
+			"title": "Soluciones de Software de Grado Empresarial",
+			"description": "Nocturne Labs se especializa en el desarrollo de soluciones de software personalizadas que abordan los desafíos únicos de las empresas modernas.",
+			"list": {
+				"cloud": "Desarrollo de aplicaciones nativas de la nube",
+				"ai": "Inteligencia empresarial impulsada por IA",
+				"enterprise": "Integración de sistemas empresariales",
+				"custom": "Automatización de flujos de trabajo personalizados"
+			},
+			"explore": "Explorar Soluciones"
+		},
+		"aboutSection": {
+			"tagline": "Sobre Nosotros",
+			"title": "El Equipo Detrás de Nocturne Labs",
+			"description": "Somos un equipo de ingenieros apasionados dedicados a resolver desafíos empresariales complejos a través de soluciones de software innovadoras.",
+			"mission": {
+				"title": "Nuestra Misión",
+				"description": "Empoderar a las empresas con soluciones tecnológicas transformadoras que impulsen el crecimiento, la eficiencia y la innovación en la era digital."
+			},
+			"vision": {
+				"title": "Nuestra Visión",
+				"description": "Ser el principal proveedor de soluciones de software empresarial que establezcan nuevos estándares de calidad, rendimiento y experiencia de usuario."
+			},
+			"list": {
+				"members": "Miembros del Equipo",
+				"projects": "Proyectos Completados",
+				"satisfaction": "Clientes Satisfechos",
+				"experience": "Años de Experiencia"
+			}
+		},
+		"testimonialsSection": {
+			"tagline": "Testimonios",
+			"title": "Lo Que Nuestros Clientes Dicen",
+			"description": "Descubra cómo Nocturne Labs ha ayudado a empresas de todo el mundo a alcanzar sus objetivos de transformación digital.",
+			"noYet": "Aún no hay testimonios."
+		},
+		"contactSection": {
+			"tagline": "Contáctenos",
+			"title": "Estas listo para llevar tu empresa al siguiente nivel?",
+			"description": "Contáctenos para obtener más información sobre cómo Nocturne Labs puede ayudarlo a alcanzar sus objetivos de transformación digital.",
+			"cta": "Agendar una Reunión",
+			"cta2": "Ver cómo podemos ayudar"
+		},
+		"form": {
+			"name": "Nombre",
+			"namePlaceholder": "Ingrese su nombre",
+			"email": "Correo Electrónico",
+			"emailPlaceholder": "Ingrese su correo electrónico",
+			"company": "Empresa",
+			"companyPlaceholder": "Ingrese su empresa",
+			"message": "Mensaje",
+			"messagePlaceholder": "Ingrese su mensaje",
+			"send": "Enviar Mensaje"
+		},
+		"rights": "Todos los derechos reservados."
+	}
+}

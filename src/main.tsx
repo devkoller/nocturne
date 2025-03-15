@@ -7,6 +7,7 @@ import App from './App.tsx'
 import '@/assets/css/index.css'
 import "aos/dist/aos.css"
 import "@/assets/css/custom.css"
+import './i18n.ts'
 
 AOS.init({
   duration: 1000,

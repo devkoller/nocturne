@@ -8,6 +8,8 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import { useTranslation } from 'react-i18next';
+
 
 
 type FormInputProps = {
@@ -24,14 +26,17 @@ type FormInputProps = {
 }
 
 export const FormInput = ({ control, label, name, description, type, placeholder, required, ...props }: FormInputProps) => {
+  const { t } = useTranslation()
   return (
     <FormField
       control={control}
       name={name}
       render={({ field }) => (
-        <FormItem className="w-full">
+        <FormItem>
           {label && <>
-            <FormLabel>{label}</FormLabel>{' '}
+            <FormLabel>
+              {t(label)}
+            </FormLabel>{' '}
             {required && <sup className="text-red-500">*</sup>}
           </>}
           <FormControl>

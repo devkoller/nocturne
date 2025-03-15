@@ -1,5 +1,5 @@
 
-import { Menu, Footer, Maps } from '@/components/Landing'
+import { Menu, Footer, } from '@/components/Landing'
 import { useState, useEffect } from 'react'
 import { useFetch } from "@/hooks"
 import { ServiceType } from "@/types"
@@ -121,7 +121,6 @@ export const Servicios = () => {
 
       <Textos />
 
-      <Maps />
       <Footer />
     </>
   )

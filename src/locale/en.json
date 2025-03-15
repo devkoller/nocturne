@@ -1,0 +1,91 @@
+{
+	"translation": {
+		"features": "Features",
+		"solutions": "Solutions",
+		"testimonials": "Testimonials",
+		"about": "About",
+		"contact": "Contact",
+		"login": "Get Started",
+		"landing": {
+			"banner": {
+				"title": "Transforming Ideas into Digital Reality",
+				"subtitle": "Nocturne Labs delivers cutting-edge software solutions that empower businesses to thrive in the digital landscape.",
+				"cta": "Get Started",
+				"cta2": "Learn More"
+			}
+		},
+		"featuresSection": {
+			"tagline": "Core Features",
+			"title": "Powerful Solutions for Complex Problems",
+			"description": "Our suite of enterprise-grade tools and services designed to accelerate your digital transformation journey.",
+			"advanced": {
+				"title": "Advanced Development",
+				"description": "Cutting-edge software development using the latest technologies and methodologies."
+			},
+			"security": {
+				"title": "Enterprise Security",
+				"description": "Robust security measures to protect your data and applications from threats."
+			},
+			"performance": {
+				"title": "Performance Optimization",
+				"description": "Streamlined solutions that maximize efficiency and minimize resource usage."
+			}
+		},
+		"solutionsSection": {
+			"tagline": "Our Solutions",
+			"title": "Enterprise-Grade Software Solutions",
+			"description": "Nocturne Labs specializes in developing custom software solutions that address the unique challenges of modern enterprises.",
+			"list": {
+				"cloud": "Cloud-native application development",
+				"ai": "AI-powered business intelligence",
+				"enterprise": "Enterprise system integration",
+				"custom": "Custom workflow automation"
+			},
+			"explore": "Explore Solutions"
+		},
+		"aboutSection": {
+			"tagline": "About Us",
+			"title": "The Team Behind Nocturne Labs",
+			"description": " We're a team of passionate engineers dedicated to solving complex business challenges through innovative software solutions.",
+			"mission": {
+				"title": "Our Mission",
+				"description": "To empower businesses with transformative technology solutions that drive growth, efficiency, and innovation in the digital age."
+			},
+			"vision": {
+				"title": "Our Vision",
+				"description": "To be the leading provider of enterprise software solutions that set new standards for quality, performance, and user experience."
+			},
+			"list": {
+				"members": "Team Members",
+				"projects": "Projects Completed",
+				"satisfaction": "Happy Clients",
+				"experience": "Years of Experience"
+			}
+		},
+		"testimonialsSection": {
+			"tagline": "Testimonials",
+			"title": "What Our Clients Say",
+			"description": "Don't just take our word for it. Here's what our clients have to say about working with Nocturne Labs.",
+			"noYet": "No testimonials yet"
+		},
+		"contactSection": {
+			"tagline": "Get In Touch",
+			"title": "Ready to Transform Your Business?",
+			"description": "Contact us today to discuss how Nocturne Labs can help you achieve your digital transformation goals.",
+			"cta": "Schedule a Consultation",
+			"cta2": "View Case Studies"
+		},
+		"form": {
+			"name": "Name",
+			"namePlaceholder": "Enter your name",
+			"email": "Email",
+			"emailPlaceholder": "Enter your email",
+			"company": "Company",
+			"companyPlaceholder": "Enter your company",
+			"message": "Message",
+			"messagePlaceholder": "Enter your message",
+			"send": "Send Message"
+		},
+		"rights": "All rights reserved."
+	}
+}
