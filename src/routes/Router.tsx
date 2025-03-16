@@ -2,7 +2,6 @@ import { Route, Routes, Navigate } from "react-router-dom"
 import { Landing } from "@/views/Landing"
 import { useAuthStore } from "@/hooks"
 import { routes as elements } from "@/utils"
-import { Building } from "@/views/Building"
 
 export const Router = () => {
   const { isAuthenticated } = useAuthStore()
@@ -57,9 +56,9 @@ export const Router = () => {
     })
   }
 
-  if (isAuthenticated === "Checking") {
-    return <Building />
-  }
+  // if (isAuthenticated === "Checking") {
+  //   return <Building />
+  // }
 
 
   return (

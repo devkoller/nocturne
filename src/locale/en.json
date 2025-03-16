@@ -66,7 +66,10 @@
 			"tagline": "Testimonials",
 			"title": "What Our Clients Say",
 			"description": "Don't just take our word for it. Here's what our clients have to say about working with Nocturne Labs.",
-			"noYet": "No testimonials yet"
+			"noYet": "No testimonials yet",
+			"cta": "Make a testimonial",
+			"ModalTitle": "Make a testimonial",
+			"ModalDescription": "Share your experience with Nocturne Labs and help us improve our services."
 		},
 		"contactSection": {
 			"tagline": "Get In Touch",
@@ -78,13 +81,22 @@
 		"form": {
 			"name": "Name",
 			"namePlaceholder": "Enter your name",
+			"nameError": "Please enter your name",
 			"email": "Email",
 			"emailPlaceholder": "Enter your email",
+			"emailError": "Please enter a valid email",
 			"company": "Company",
 			"companyPlaceholder": "Enter your company",
+			"phone": "Phone",
+			"phonePlaceholder": "Enter your phone",
 			"message": "Message",
 			"messagePlaceholder": "Enter your message",
-			"send": "Send Message"
+			"messageError": "Please enter a message",
+			"position": "Position",
+			"positionPlaceholder": "Enter your position",
+			"cta": "Send Message",
+			"successTitle": "Success",
+			"successMessage": "Your message has been sent successfully. We'll get back to you as soon as possible."
 		},
 		"rights": "All rights reserved."
 	}

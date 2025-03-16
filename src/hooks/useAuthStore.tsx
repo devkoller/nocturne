@@ -95,49 +95,49 @@ export const useAuthStore = () => {
     }
   }
 
-  useEffect(() => {
-    const checkAuth = async (session: any) => {
-      try {
-        const result = await updatePermissions(session.token)
-        const data = await result.json()
+  // useEffect(() => {
+  //   const checkAuth = async (session: any) => {
+  //     try {
+  //       const result = await updatePermissions(session.token)
+  //       const data = await result.json()
 
-        if (!result.ok) {
-          throw new Error("Error al actualizar permisos")
-        }
+  //       if (!result.ok) {
+  //         throw new Error("Error al actualizar permisos")
+  //       }
 
-        dispatch(
-          onLogin({
-            ...session,
-            permisos: data.data,
-          })
-        )
+  //       dispatch(
+  //         onLogin({
+  //           ...session,
+  //           permisos: data.data,
+  //         })
+  //       )
 
-      } catch (error) {
-        dispatch(
-          onLogin({
-            ...session,
-          })
-        )
-        // startLogout()
-      }
-    }
+  //     } catch (error) {
+  //       dispatch(
+  //         onLogin({
+  //           ...session,
+  //         })
+  //       )
+  //       // startLogout()
+  //     }
+  //   }
 
-    try {
-      if (Object.keys(localStorage).length === 0 && Object.keys(sessionStorage).length === 0) {
-        dispatch(onLogout({}))
-        return
-      }
-      if (isAuthenticated === "Not Authenticated") return
-      if (Object.keys(localStorage).length > 0) {
-        checkAuth(localStorage)
-      }
-      if (Object.keys(sessionStorage).length > 0) {
-        checkAuth(sessionStorage)
-      }
-    } catch (error) {
-      startLogout()
-    }
-  }, [])
+  //   try {
+  //     if (Object.keys(localStorage).length === 0 && Object.keys(sessionStorage).length === 0) {
+  //       dispatch(onLogout({}))
+  //       return
+  //     }
+  //     if (isAuthenticated === "Not Authenticated") return
+  //     if (Object.keys(localStorage).length > 0) {
+  //       checkAuth(localStorage)
+  //     }
+  //     if (Object.keys(sessionStorage).length > 0) {
+  //       checkAuth(sessionStorage)
+  //     }
+  //   } catch (error) {
+  //     startLogout()
+  //   }
+  // }, [])
 
   return {
     id,

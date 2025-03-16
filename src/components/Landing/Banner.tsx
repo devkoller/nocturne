@@ -1,10 +1,3 @@
-// import { Shape1 } from '@/assets/images/SVGComponents/Shapes'
-// import { Button } from '@/components/ui/button'
-// import raul from '@/assets/images/otorrino/raul_corte.png'
-// import magda from '@/assets/images/otorrino/magdicarla_corte.png'
-// import { useNavigate } from 'react-router-dom'
-// import { GiHealing } from "react-icons/gi";
-// import { IoMdTime } from "react-icons/io";
 import { Button } from "@/components/ui/button"
 import { ChevronRight, } from "lucide-react"
 import nocturne from '@/assets/images/nocturne.webp'
@@ -27,7 +20,11 @@ export const Banner = () => {
             </p>
           </div>
           <div className="flex flex-col gap-2 min-[400px]:flex-row">
-            <Button className="bg-purple-600 hover:bg-purple-700">
+            <Button className="bg-purple-600 hover:bg-purple-700"
+              onClick={() => {
+                window.location.href = '#contact'
+              }}
+            >
               {t('landing.banner.cta')}
               <ChevronRight className="ml-2 h-4 w-4" />
             </Button>

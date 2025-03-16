@@ -12,7 +12,7 @@ function App() {
 
   return (
     <LanguageProvider>
-      <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
+      <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
         <MoProvider storageKey="vite-mo-selected">
           <Provider store={store}>
             <BrowserRouter>

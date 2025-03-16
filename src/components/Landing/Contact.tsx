@@ -1,34 +1,60 @@
 
 import { Button } from "@/components/ui/button"
 import { useTranslation } from 'react-i18next';
-
 import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { Form } from "@/components/ui/form"
 import { FormInput, } from '@/components/Form'
+import { usePost } from "@/hooks";
+import { useToast } from "@/hooks/use-toast"
 
-const formSchema = z.object({
-  name: z.string(),
-  email: z.string().email(),
-  company: z.string(),
-  message: z.string(),
-})
+
+
 
 export const Contact = () => {
   const { t } = useTranslation();
+  const { execute, loading } = usePost();
+  const { toast } = useToast();
+
+  const formSchema = z.object({
+    name: z.string().min(1, {
+      message: t('form.nameError'),
+    }),
+    email: z.string().email({
+      message: t('form.emailError'),
+    }),
+    company: z.string(),
+    phone: z.string(),
+    message: z.string().min(1, {
+      message: t('form.messageError'),
+    })
+  })
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       email: "",
       name: "",
       company: "",
+      phone: "",
       message: "",
     },
   })
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log("🚀 > Contact.tsx:31 > onSubmit > values:", values);
+    execute({
+      url: "/messages/create-message",
+      body: values,
+    }).then((res) => {
+      if (res.status === 200) {
+        toast({
+          title: t('form.successTitle'),
+          description: t('form.successMessage'),
+        })
+        form.reset()
+      }
+    })
   }
 
   return (
@@ -46,12 +72,11 @@ export const Contact = () => {
               {t('contactSection.description')}
             </p>
             <div className="flex flex-col gap-2 min-[400px]:flex-row">
-              <Button className="bg-purple-600 hover:bg-purple-700">
-                {t('contactSection.cta')}
-              </Button>
-              <Button variant="outline" className="border-purple-500 bg-black text-white hover:bg-purple-500/20 hover:text-white">
-                {t('contactSection.cta2')}
-              </Button>
+              <a href="https://wa.me/523321120145" target="_blank" rel="noopener noreferrer">
+                <Button className="bg-purple-600 hover:bg-purple-700">
+                  {t('contactSection.cta')}
+                </Button>
+              </a>
             </div>
           </div>
           <div className="rounded-lg border border-gray-800 bg-gray-900 p-6 shadow-lg">
@@ -71,12 +96,20 @@ export const Contact = () => {
                     control={form.control}
                   />
                 </div>
-                <FormInput
-                  label="form.company"
-                  name="password"
-                  placeholder="form.companyPlaceholder"
-                  control={form.control}
-                />
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <FormInput
+                    label="form.company"
+                    name="company"
+                    placeholder="form.companyPlaceholder"
+                    control={form.control}
+                  />
+                  <FormInput
+                    label="form.phone"
+                    name="phone"
+                    placeholder="form.phonePlaceholder"
+                    control={form.control}
+                  />
+                </div>
                 <FormInput
                   label="form.message"
                   type='textarea'
@@ -84,59 +117,11 @@ export const Contact = () => {
                   placeholder="form.messagePlaceholder"
                   control={form.control}
                 />
-                <Button type="submit" className="w-full bg-purple-600 hover:bg-purple-700">
+                <Button type="submit" className="w-full bg-purple-600 hover:bg-purple-700" disabled={loading}>
                   {t('form.cta')}
                 </Button>
               </form>
             </Form>
-            {/* <form className="space-y-4">
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-medium leading-none">
-                    Name
-                  </label>
-                  <input
-                    id="name"
-                    className="flex h-10 w-full rounded-md border border-gray-800 bg-gray-950 px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-purple-500"
-                    placeholder="Enter your name"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium leading-none">
-                    Email
-                  </label>
-                  <input
-                    id="email"
-                    type="email"
-                    className="flex h-10 w-full rounded-md border border-gray-800 bg-gray-950 px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-purple-500"
-                    placeholder="Enter your email"
-                  />
-                </div>
-              </div>
-              <div className="space-y-2">
-                <label htmlFor="company" className="text-sm font-medium leading-none">
-                  Company
-                </label>
-                <input
-                  id="company"
-                  className="flex h-10 w-full rounded-md border border-gray-800 bg-gray-950 px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-purple-500"
-                  placeholder="Enter your company name"
-                />
-              </div>
-              <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-medium leading-none">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  className="flex min-h-[100px] w-full rounded-md border border-gray-800 bg-gray-950 px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-purple-500"
-                  placeholder="Enter your message"
-                />
-              </div>
-              <Button type="submit" className="w-full bg-purple-600 hover:bg-purple-700">
-                Send Message
-              </Button>
-            </form> */}
           </div>
         </div>
       </div>

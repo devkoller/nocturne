@@ -66,7 +66,10 @@
 			"tagline": "Testimonios",
 			"title": "Lo Que Nuestros Clientes Dicen",
 			"description": "Descubra cómo Nocturne Labs ha ayudado a empresas de todo el mundo a alcanzar sus objetivos de transformación digital.",
-			"noYet": "Aún no hay testimonios."
+			"noYet": "Aún no hay testimonios.",
+			"cta": "Hacer un Testimonio",
+			"ModalTitle": "Hacer un Testimonio",
+			"ModalDescription": "Comparta su experiencia con Nocturne Labs y ayúdenos a mejorar nuestros servicios."
 		},
 		"contactSection": {
 			"tagline": "Contáctenos",
@@ -78,13 +81,22 @@
 		"form": {
 			"name": "Nombre",
 			"namePlaceholder": "Ingrese su nombre",
+			"nameError": "Por favor, ingrese su nombre",
 			"email": "Correo Electrónico",
 			"emailPlaceholder": "Ingrese su correo electrónico",
+			"emailError": "Por favor, ingrese un correo electrónico válido",
 			"company": "Empresa",
 			"companyPlaceholder": "Ingrese su empresa",
+			"phone": "Teléfono",
+			"phonePlaceholder": "Ingrese su teléfono",
 			"message": "Mensaje",
 			"messagePlaceholder": "Ingrese su mensaje",
-			"send": "Enviar Mensaje"
+			"messageError": "Por favor, ingrese un mensaje",
+			"position": "Posición de trabajo",
+			"positionPlaceholder": "Ingrese su posición de trabajo",
+			"cta": "Enviar Mensaje",
+			"successTitle": "Correcto",
+			"successMessage": "Su mensaje ha sido enviado con éxito. Nos pondremos en contacto con usted lo antes posible."
 		},
 		"rights": "Todos los derechos reservados."
 	}
