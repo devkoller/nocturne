@@ -1,5 +1,5 @@
-import { useLocalStorage } from "./useLocalStorage.tsx"
-import { useSessionStorage } from "./useSessionStorage.tsx"
+// import { useLocalStorage } from "./useLocalStorage.tsx"
+// import { useSessionStorage } from "./useSessionStorage.tsx"
 import {
   clearErrorMessage,
   onCheckingCredentials,
@@ -7,9 +7,12 @@ import {
   onLogout,
 } from "../store/slice/index.ts"
 
-import { useEffect } from "react"
+// import { useEffect } from "react"
 import { useAppDispatch, useAppSelector } from "./redux.ts"
-import { loginService, updatePermissions } from "@/service/authService.ts"
+import {
+  loginService,
+  // updatePermissions
+} from "@/service/authService.ts"
 
 
 type startLogin = {
@@ -21,15 +24,15 @@ type startLogin = {
 export const useAuthStore = () => {
   const dispatch = useAppDispatch()
 
-  const [localStorage, setLocalStorage] = useLocalStorage({
-    key: "localStorage",
-    defaultValue: {},
-  })
+  // const [localStorage, setLocalStorage] = useLocalStorage({
+  //   key: "localStorage",
+  //   defaultValue: {},
+  // })
 
-  const [sessionStorage, setSessionStorage] = useSessionStorage({
-    key: "sessionStorage",
-    defaultValue: {},
-  })
+  // const [sessionStorage, setSessionStorage] = useSessionStorage({
+  //   key: "sessionStorage",
+  //   defaultValue: {},
+  // })
 
   const {
     id,
@@ -74,9 +77,9 @@ export const useAuthStore = () => {
 
       dispatch(onLogin(session))
 
-      body.keepSessionOpen
-        ? setLocalStorage(session)
-        : setSessionStorage(session)
+      // body.keepSessionOpen
+      //   ? setLocalStorage(session)
+      //   : setSessionStorage(session)
     } catch (error) {
       dispatch(onLogout("Hubo un error al intentarse autenticar"))
       setTimeout(() => {
@@ -87,8 +90,8 @@ export const useAuthStore = () => {
 
   const startLogout = async () => {
     try {
-      setSessionStorage({})
-      setLocalStorage({})
+      // setSessionStorage({})
+      // setLocalStorage({})
       dispatch(onLogout({}))
     } catch (error) {
       console.log(error)
